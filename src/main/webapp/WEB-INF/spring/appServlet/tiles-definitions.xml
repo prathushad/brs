@@ -10,6 +10,9 @@
 		<put-attribute name="footer" value="/WEB-INF/views/layouts/footer.jsp" />
 	</definition>
 
+	<definition name="home" extends="shell">
+		<put-attribute name="main" value="/WEB-INF/views/home.jsp" />
+	</definition>
 
 	<definition name="account/login" extends="shell">
 		<put-attribute name="main" value="/WEB-INF/views/account/login.jsp" />

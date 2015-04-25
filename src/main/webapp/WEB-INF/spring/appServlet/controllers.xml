@@ -9,6 +9,7 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
 	<mvc:view-controller path="/" view-name="default" />
+	<mvc:view-controller path="/home" view-name="home"/>
 
 	<!-- Spring Internationalization and Localization -->
 	<bean id="messageSource"
