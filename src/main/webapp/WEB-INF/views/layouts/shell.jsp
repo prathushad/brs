@@ -13,6 +13,8 @@
 <head>
 <link href="<c:url value="/resources/css/bootstrap-responsive.css" />"
 	rel="stylesheet" type="text/css" media="screen,print" />
+<link href="<c:url value="/resources/css/bootstrap_BRS.css" />"
+	rel="stylesheet" type="text/css" media="screen,print" />
 
 <link
 	href="<c:url value="/resources/css/jquery-ui-1.8.16.custom.css" />"

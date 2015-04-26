@@ -3,7 +3,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:util="http://www.springframework.org/schema/util"
 	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
-	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:tx="http://www.springframework.org/schema/tx"
 
 
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
@@ -19,11 +20,45 @@
 						http://www.springframework.org/schema/aop 
 				        http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 						http://www.springframework.org/schema/jee
-	 					http://www.springframework.org/schema/jee/spring-jee-3.0.xsd">
+	 					http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+	 					http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+				        http://www.springframework.org/schema/tx 
+				        http://www.springframework.org/schema/tx/spring-tx.xsd">
 
+	<jpa:repositories base-package="com.brs.repository" factory-class="com.brs.repository.support.EnversRevisionRepositoryFactoryBean"/>
 
 	<mvc:annotation-driven />
 	<context:component-scan base-package="com.brs" />
+
+	<jee:jndi-lookup jndi-name="jdbc/brsDS" id="dataSource" />
+
+	<bean id="jpaVendorAdapter"
+		class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+		<property name="database" value="ORACLE" />
+		<property name="generateDdl" value="false" />
+	</bean>
+
+
+
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<bean
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+		id="entityManagerFactory">
+		<property name="dataSource" ref="dataSource" />
+		<property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
+		<property name="packagesToScan">
+			<list>
+				<value>com.brs</value>
+			</list>
+		</property>
+	</bean>
+
 
 
 </beans>
