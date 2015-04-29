@@ -15,8 +15,10 @@ public class CryptoPasswordEncoder implements PasswordEncoder {
 	public boolean isPasswordValid(String encPass, String rawPass, Object salt) {
 
 		boolean isPasswordValid = false;
-		if(null!=encPass && encPass.equals(rawPass) ){
-			isPasswordValid=true;
+		if (null == encPass) {
+			isPasswordValid = false;
+		} else if (null != encPass && encPass.equals(rawPass)) {
+			isPasswordValid = true;
 		}
 		return isPasswordValid;
 	}
