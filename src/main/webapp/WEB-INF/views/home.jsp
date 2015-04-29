@@ -17,7 +17,7 @@
 				src="resources/images/library_home.jpg" />
 		</div>
 		<div style="width: 400px; height: 300px; float: right">
-			<ul id="sidebar" style="padding-top: 2cm;">
+			<ul id="sidebar" style="padding-top: 1cm;padding-bottom:1cm;">
 				<li class="nav-list"><span>Affordable rates</span></li>
 				<li class="nav-list"><span>Large collection of books</span></li>
 				<li class="nav-list"><span>Wide variety of categories</span></li>
