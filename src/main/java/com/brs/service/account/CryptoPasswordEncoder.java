@@ -13,9 +13,12 @@ public class CryptoPasswordEncoder implements PasswordEncoder {
 
 	@Override
 	public boolean isPasswordValid(String encPass, String rawPass, Object salt) {
-		System.out.println(encPass + " ec");
-		System.out.println(rawPass + " rp");
-		return true;
+
+		boolean isPasswordValid = false;
+		if(null!=encPass && encPass.equals(rawPass) ){
+			isPasswordValid=true;
+		}
+		return isPasswordValid;
 	}
 
 }

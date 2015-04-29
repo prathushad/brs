@@ -28,8 +28,6 @@ public class User implements UserDetails, Serializable, Cloneable {
 	private static final long serialVersionUID = -8978755051629956811L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_Seq")
-	@SequenceGenerator(name = "user_Seq", sequenceName = "users_seq", allocationSize = 1)
 	private int id;
 
 	@Column(name = "username", unique = true, nullable = false)
@@ -44,10 +42,10 @@ public class User implements UserDetails, Serializable, Cloneable {
 	@Column(name = "last_name")
 	private String lastName;
 
-	@Column(name = "email")
+	@Column(name = "email_address")
 	private String email;
 
-	@Transient
+	@Column(name = "role")
 	private String role;
 
 	@Override

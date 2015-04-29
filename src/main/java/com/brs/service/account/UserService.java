@@ -17,12 +17,10 @@ public class UserService implements UserDetailsService {
 
 	public UserDetails loadUserByUsername(String username)
 			throws UsernameNotFoundException {
-		System.out.println(username);
 		User user = repository.findByUserName(username);
 		if (user == null)
-			throw new UsernameNotFoundException("Oops!");
+			throw new UsernameNotFoundException("User not found");
 
-		user.setRole("ROLE_USER");
 		return user;
 	}
 }

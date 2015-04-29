@@ -42,7 +42,7 @@
 
 	<bean id="jpaVendorAdapter"
 		class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-		<property name="database" value="ORACLE" />
+		<property name="database" value="MYSQL" />
 		<property name="generateDdl" value="false" />
 	</bean>
 

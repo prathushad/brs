@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class BRSHomeController {
@@ -20,13 +19,12 @@ public class BRSHomeController {
 	}
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	@ResponseBody
 	public String getList(HttpServletRequest httpRequest){
 		System.out.println("here=home");
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		auth.getName();
 		System.out.println(auth.getAuthorities());
-		return "account/login";
+		return "portal";
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
