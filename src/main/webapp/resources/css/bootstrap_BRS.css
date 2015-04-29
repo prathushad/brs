@@ -7512,7 +7512,7 @@ h1 {
   border-bottom: 1px solid #e6eaeb;
   padding-bottom: 15px;
   margin-bottom: 0;
-  color: #48a95e;
+  color: #313B74;
   font-weight: 300;
   line-height: 1.25em;
 }
@@ -7542,7 +7542,7 @@ h3 {
   font-family: "proxima-nova", sans-serif;
   line-height: 1.45em;
   font-weight: 600;
-  color: #48a95e;
+  color: #313B74;
 }
 
 h5 {
@@ -7669,7 +7669,7 @@ h5.finished-step-checkmark:before,
 h6.finished-step-checkmark:before {
   content: "\f111";
   font-size: 36px;
-  color: #48a95e;
+  color: #313B74;
   position: absolute;
   right: 3px;
   top: 1px;
@@ -7804,7 +7804,7 @@ a [class*=" icon-"] {
 }
 
 .mixins-masthead-bg-color {
-  background: #48a95e;
+  background: #313B74;
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)";
 }
 
@@ -7828,9 +7828,9 @@ a [class*=" icon-"] {
 }
 
 #masthead .navbar-inner {
-  background: #48a95e;
+  background: #313B74;
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)";
-  border-bottom: 5px solid #48a95e;
+  border-bottom: 5px solid #313B74;
 }
 
 #masthead .nav {
@@ -7856,7 +7856,7 @@ a [class*=" icon-"] {
 }
 
 #masthead .nav li a:hover {
-  background: #59BA6F;
+  background: #278ddb;
 }
 
 #masthead .nav .dropdown-toggle:hover .caret {
@@ -7896,7 +7896,7 @@ a [class*=" icon-"] {
 
 #masthead .nav .dropdown-menu li a:hover,
 #masthead .nav .dropdown-menu li a:focus {
-  background: #59BA6F;
+  background: #278ddb;
   color: #ffffff;
 }
 
@@ -8033,7 +8033,7 @@ a [class*=" icon-"] {
 }
 
 .mixins-primary-btn-bg {
-  background: #3d99df;
+  background: #313B74;
 }
 
 .mixins-primary-btn-bg-hover {
@@ -8077,7 +8077,7 @@ a [class*=" icon-"] {
 
 .btn-primary {
   color: #fff;
-  background: #3d99df;
+  background: #313B74;
   border: 1px solid #278ddb;
   text-shadow: none;
 }
@@ -8112,7 +8112,7 @@ a [class*=" icon-"] {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  background: #3d99df;
+  background: #313B74;
 }
 
 .mixins-sidebar-font-color {
@@ -8312,7 +8312,7 @@ input[type="radio"] {
 }
 
 #gallery #menu ul li a {
-  color: #48a95e;
+  color: #313B74;
   font-weight: 600;
 }
 
@@ -8473,7 +8473,7 @@ thead tr.graydrkbg {
 }
 
 .mixins-footer-bg-color {
-  background: #47a75d;
+  background: #313B74;
 }
 
 .mixins-footer-text-color {
@@ -8481,7 +8481,7 @@ thead tr.graydrkbg {
 }
 
 #footer {
-  background: #47a75d;
+  background: #313B74;
   color: #ffffff;
   width: 100%!important;
   font-size: 13px;
@@ -8561,7 +8561,7 @@ thead tr.graydrkbg {
 .datepicker td.active:hover.disabled,
 .datepicker td.active[disabled],
 .datepicker td.active:hover[disabled] {
-  background-color: #48a95e!important;
+  background-color: #313B74!important;
   border-radius: 0!important;
 }
 
@@ -8681,7 +8681,7 @@ ul.nav-list > li > a {
 }
 
 .well-step .blurb h4 {
-  color: #48a95e;
+  color: #313B74;
   background-color: transparent !important;
   font-family: inherit;
   font-size: 16px;
