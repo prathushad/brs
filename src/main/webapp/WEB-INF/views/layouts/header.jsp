@@ -7,7 +7,7 @@
 <div class="navbar navbar-fixed-top" id="masthead" role="banner">
 	<div class="navbar-inner">
 		<div class="container">
-			<div style="float:left">
+			<div style="float:left;padding-top:8px;">
 				<a href="home" style="padding-right: 550px; color: white">BOOK
 					RESERVATION SYSTEM</a>
 			</div>
