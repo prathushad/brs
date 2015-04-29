@@ -1,1 +1,1 @@
-<jsp:forward page="/portal"></jsp:forward>
+<div class="container">this is home</div>
