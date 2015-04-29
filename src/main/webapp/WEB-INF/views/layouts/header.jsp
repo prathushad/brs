@@ -8,11 +8,14 @@
 	<div class="navbar-inner">
 		<div class="container">
 			<div style="float:left;padding-top:8px;">
-				<a href="home" style="padding-right: 550px; color: white">BOOK
+				<a href="home" style="padding-right: 450px; color: white">BOOK
 					RESERVATION SYSTEM</a>
 			</div>
 			<div  style="float:right">
 				<ul class="nav">
+					<sec:authorize access="isAuthenticated()">
+						<li><a href="<c:url value='/portal'/>">My Account</a></li>
+					</sec:authorize>
 					<sec:authorize access="isAuthenticated()">
 						<li><a href="j_spring_security_logout">Logout</a></li>
 					</sec:authorize>

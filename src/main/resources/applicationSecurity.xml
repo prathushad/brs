@@ -22,7 +22,7 @@
 		<intercept-url pattern="/**" access="hasRole('USER')" />
 		<form-login login-page="/login" default-target-url="/portal"
 			authentication-failure-url="/login?auth=fail" />
-		<logout logout-success-url="/logout" />
+		<logout logout-success-url="/home" />
 	</http>
 
 	<authentication-manager alias="authenticationManager">
