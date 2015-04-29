@@ -21,7 +21,7 @@
 		<intercept-url pattern="/accessdenied" access="permitAll" />
 		<intercept-url pattern="/**" access="hasRole('USER')" />
 		<form-login login-page="/login" default-target-url="/portal"
-			authentication-failure-url="/accessdenied" />
+			authentication-failure-url="/login?auth=fail" />
 		<logout logout-success-url="/logout" />
 	</http>
 
