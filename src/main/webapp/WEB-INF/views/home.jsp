@@ -26,14 +26,14 @@
 			</ul>
 			<div class="nav">
 				<sec:authorize access="!isAuthenticated()">
-					<a class="btn btn-primary" href="<c:url value='/login'/>">Login</a>
-					<span>Already a member?</span>
+					<a class="btn btn-primary" href="<c:url value='/login'/>">Login now</a>
+					<span> If you are already a member.</span>
 				</sec:authorize>
 			</div>
 			<div class="nav">
 				<sec:authorize access="!isAuthenticated()">
-					<a class="btn btn-primary" href="<c:url value='/signup'/>">Signup</a>
-					<span>Register now, to become a member.</span>
+					<a class="btn btn-primary" href="<c:url value='/signup'/>">Register&nbsp;&nbsp;&nbsp;&nbsp;</a>
+					<span>Signup now, to become a member.</span>
 				</sec:authorize>
 			</div>
 		</div>
