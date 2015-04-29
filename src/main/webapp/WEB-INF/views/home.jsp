@@ -1,6 +1,1 @@
-hello
-<br/>
-hello
-<br/>
-hello
-<br/>
+<jsp:forward page="/list"></jsp:forward>

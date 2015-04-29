@@ -10,8 +10,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<org.springframework-version>4.0.6.RELEASE</org.springframework-version>
+		<org.springframework.security.version>3.1.0.RELEASE</org.springframework.security.version>
 		<org.apache.tiles-version>3.0.4</org.apache.tiles-version>
-		<spring.security.core.version>3.1.0.RELEASE</spring.security.core.version>
 	</properties>
 
 	<dependencies>
@@ -46,98 +46,44 @@
 		<!-- Spring Dependency starts -->
 		<dependency>
 			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
 			<version>${org.springframework-version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>spring-beans</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>spring-core</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${org.springframework-version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>spring-beans</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>spring-core</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
 			<version>${org.springframework-version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>spring-beans</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>spring-core</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>spring-beans</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>spring-core</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aop</artifactId>
 			<version>${org.springframework-version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>spring-beans</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>spring-core</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
 			<version>${org.springframework-version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>spring-beans</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>spring-core</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>spring-tx</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -145,103 +91,72 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-core</artifactId>
-			<version>${spring.security.core.version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>spring-beans</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>spring-core</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-web</artifactId>
-			<version>${spring.security.core.version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>spring-beans</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>spring-core</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>spring-tx</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-config</artifactId>
-			<version>${spring.security.core.version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>spring-beans</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>spring-core</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-taglibs</artifactId>
-			<version>${spring.security.core.version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>spring-beans</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>spring-core</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>spring-tx</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-jpa</artifactId>
-			<version>1.1.0.RELEASE</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>spring-beans</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>spring-core</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>spring-orm</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>spring-tx</artifactId>
-					<groupId>org.springframework</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>${org.springframework.security.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${org.springframework.security.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${org.springframework.security.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${org.springframework.security.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>1.5.2.RELEASE</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-beans</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>	
+		
 		<!-- Spring Dependency ends -->
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.0-api</artifactId>
+			<version>1.0.1.Final</version>
+		</dependency>		
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>3.6.7.Final</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-entitymanager</artifactId>
+                <version>3.6.7.Final</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate.javax.persistence</groupId>
+                <artifactId>hibernate-jpa-2.0-api</artifactId>
+                <version>1.0.1.Final</version>
+            </dependency>
 
 		<!-- Tiles Dependency ends -->
 		<dependency>
@@ -260,51 +175,6 @@
 			<version>${org.apache.tiles-version}</version>
 		</dependency>
 		<!-- Tiles Dependency ends -->
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>3.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate.javax.persistence</groupId>
-			<artifactId>hibernate-jpa-2.0-api</artifactId>
-			<version>1.0.1.Final</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
-			<version>1.0.0.GA</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-envers</artifactId>
-			<version>3.6.7.Final</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-			<version>3.6.7.Final</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>4.0.2.GA</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-core</artifactId>
-			<version>2.1.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>2.1.1</version>
-		</dependency>
-		<dependency>
-			<groupId>joda-time</groupId>
-			<artifactId>joda-time</artifactId>
-			<version>2.1</version>
-		</dependency>
 
 	</dependencies>
 
