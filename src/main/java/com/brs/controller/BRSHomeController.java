@@ -12,18 +12,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class BRSHomeController {
 
-	@RequestMapping(value = "/loginsa", method = RequestMethod.GET)
-	public String getHomePage(HttpServletRequest httpRequest){
-		System.out.println("here");
-		return "account/login";
-	}
-
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public String getList(HttpServletRequest httpRequest){
-		System.out.println("here=home");
+	@RequestMapping(value = "/portal", method = RequestMethod.GET)
+	public String getList(HttpServletRequest httpRequest, Model model){
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		auth.getName();
-		System.out.println(auth.getAuthorities());
+		model.addAttribute("username", auth.getName());
 		return "portal";
 	}
 	

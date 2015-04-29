@@ -17,4 +17,9 @@
 	<definition name="account/login" extends="shell">
 		<put-attribute name="main" value="/WEB-INF/views/account/login.jsp" />
 	</definition>
+
+	<definition name="account/signup" extends="shell">
+		<put-attribute name="main" value="/WEB-INF/views/account/signup.jsp" />
+	</definition>
+
 </tiles-definitions>
