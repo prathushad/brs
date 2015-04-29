@@ -3,7 +3,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 <footer class="navbar navbar-fixed-bottom" id="footer">
- <div class="container">
- Copyrights Reserved.
-</div>
+	<div class="container">
+		<div style="text-align: center;">Copyrights Reserved.</div>
+	</div>
 </footer>
