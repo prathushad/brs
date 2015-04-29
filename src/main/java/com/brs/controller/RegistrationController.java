@@ -3,6 +3,11 @@ package com.brs.controller;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,6 +20,9 @@ public class RegistrationController {
 
 	@Autowired
 	private IUserRepository iUserRepository;
+
+	@Autowired
+	protected AuthenticationManager authenticationManager;
 
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public String signup(HttpServletRequest httpRequest) {
@@ -36,6 +44,12 @@ public class RegistrationController {
 		user.setPassword(password);
 		user.setRole("USER");
 		User user2 = iUserRepository.save(user);
+		if (user2 != null && user2.getId() > 0) {
+			UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(username, password);
+			token.setDetails(new WebAuthenticationDetails(httpRequest));
+			Authentication authenticatedUser = authenticationManager.authenticate(token);
+			SecurityContextHolder.getContext().setAuthentication(authenticatedUser);
+		}
 		return "redirect:portal";
 
 	}

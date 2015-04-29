@@ -2,6 +2,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
-<footer class="container" role="footer">
-	<div class="row-fluid margin30-t">footer it is</div>
+<footer class="navbar navbar-fixed-bottom" id="footer">
+ <div class="container">
+ Copyrights Reserved.
+</div>
 </footer>

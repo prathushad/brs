@@ -40,12 +40,12 @@
 	<div class="topbar">
 		<tiles:insertAttribute name="header" />
 	</div>
-	<div id="container-wrap" class="row-fluid">
+	<div id="container-wrap" style="padding-top: 2cm;">
 		<div class="container">
 			<tiles:insertAttribute name="main" />
 		</div>
 	</div>
-	<div id="footer">
+	<div id="bottombar" style="padding-bottom: 12cm;">
 		<tiles:insertAttribute name="footer" />
 	</div>
 
