@@ -20,8 +20,8 @@
 				<td colspan="2">&nbsp;</td>
 			</tr>
 			<tr>
-				<td colspan='2'><input name="submit" type="submit">&nbsp;<input
-					name="reset" type="reset"></td>
+				<td colspan='2'><input name="submit"  class="btn btn-primary"  type="submit">&nbsp;<input
+					name="reset" class="btn btn-primary" type="reset"></td>
 			</tr>
 		</table>
 	</form>

@@ -40,4 +40,10 @@ public class BRSHomeController {
 	public String home(Model model) {
 		return "home";
 	}
+
+	@RequestMapping(value = "/error", method = RequestMethod.GET)
+	public String error(Model model) {
+		return "error";
+	}
+
 }

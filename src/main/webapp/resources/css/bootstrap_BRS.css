@@ -7790,7 +7790,6 @@ a [class*=" icon-"] {
   font-weight: 600;
   font-size: 16px;
   min-height: 20px;
-  background: #ffffff;
 }
 
 #sidebar h4 i,
@@ -8146,7 +8145,6 @@ a [class*=" icon-"] {
 }
 
 #sidebar .nav-list li {
-  background: #ffffff;
   color: #428fd5;
   font-size: 15px;
 }

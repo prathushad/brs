@@ -1,1 +1,11 @@
-<div class="container">Hello World!<br/>Hello World!<br/>Hello World!<br/>Hello World!<br/>Hello World!<br/>Hello World!${username}<br/></div>
+<div class="gutter10">
+	<div class="row-fluid" id="">
+		<h1 id="skip" style="text-align: center;">Welcome, ${username}</h1>
+	</div>
+	<div class="row-fluid" style="height: 400px;">
+		<%@ include file="sidebar.jsp"%>
+		<div class="span9 dashboard-rightpanel margin30-b" id="rightpanel">
+		</div>
+	</div>
+
+</div>

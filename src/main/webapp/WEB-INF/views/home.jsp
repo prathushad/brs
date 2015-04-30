@@ -26,7 +26,7 @@
 			</ul>
 			<div class="nav">
 				<sec:authorize access="!isAuthenticated()">
-					<a class="btn btn-primary" href="<c:url value='/login'/>">Login now</a>
+					<a class="btn btn-primary" href="<c:url value='/login'/>">Login Now</a>
 					<span> If you are already a member.</span>
 				</sec:authorize>
 			</div>

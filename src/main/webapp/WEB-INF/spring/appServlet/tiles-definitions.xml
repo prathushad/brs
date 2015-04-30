@@ -25,4 +25,8 @@
 		<put-attribute name="main" value="/WEB-INF/views/account/signup.jsp" />
 	</definition>
 
+	<definition name="error" extends="shell">
+		<put-attribute name="main" value="/WEB-INF/views/error/error.jsp" />
+	</definition>
+
 </tiles-definitions>
