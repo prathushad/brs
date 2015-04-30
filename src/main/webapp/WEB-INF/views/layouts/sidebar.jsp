@@ -9,7 +9,7 @@
 		<li><a href="<c:url value="/search" />"><i
 				class="icon-search"></i>Search for books</a></li>
 		<li><a href="javascript:void(0)"><i class="icon-book"></i>Checkouts</a></li>
-		<li><a href="javascript:void(0)"><i class="icon-lock"></i>Holds</a></li>
+		<li><a href="<c:url value="/showallholds" />"><i class="icon-lock"></i>Holds</a></li>
 		<li><a href="javascript:void(0)"><i class="icon-money"></i>Fines
 				& Payments</a></li>
 		<li><a href="javascript:void(0)"><i class="icon-phone"></i>Contact

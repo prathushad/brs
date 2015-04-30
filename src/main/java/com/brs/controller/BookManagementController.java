@@ -1,5 +1,6 @@
 package com.brs.controller;
 
+import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -36,12 +37,14 @@ public class BookManagementController {
 		model.addAttribute("results", books);
 		return "books/searchresults";
 	}
+	
 	@RequestMapping(value = "/showall", method = RequestMethod.POST)
 	public String showall(Model model, HttpServletRequest httpRequest) {
 		List<Book> books = bookManagementService.findAll();
 		model.addAttribute("results", books);
 		return "books/searchresults";
 	}
+
 	@RequestMapping(value = "/placehold", method = RequestMethod.GET)
 	public String placehold(Model model, HttpServletRequest httpRequest, @RequestParam(value="book") Integer bookId) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -52,8 +55,32 @@ public class BookManagementController {
 		book.setOnHoldBy(user.getId());
 		book.setIsCheckedOut("N");
 		book.setIsAvailable("N");
+		Calendar today = Calendar.getInstance();
+		today.add(Calendar.DATE, 10);
+		book.setPickupDueDate(today.getTime());
 		bookManagementService.updateBook(book);
 		model.addAttribute("title", book.getTitle());
 		return "books/holdsuccess";
+	}
+
+	@RequestMapping(value = "/showallholds", method = RequestMethod.GET)
+	public String showaholds(Model model, HttpServletRequest httpRequest) {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		User user = (User) auth.getPrincipal();
+		List<Book> books = bookManagementService.findBooksOnHoldForUser(user.getId());
+		model.addAttribute("results", books);
+		return "books/holdresults";
+	}
+
+	@RequestMapping(value = "/releasehold", method = RequestMethod.GET)
+	public String releasehold(Model model, HttpServletRequest httpRequest, @RequestParam(value="book") Integer bookId) {
+		Book book = bookManagementService.findBookById(bookId);
+		book.setIsOnHold("N");
+		book.setOnHoldBy(null);
+		book.setIsCheckedOut("N");
+		book.setIsAvailable("Y");
+		book.setPickupDueDate(null);
+		bookManagementService.updateBook(book);
+		return "redirect:/showallholds";
 	}
 }

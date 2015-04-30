@@ -1,7 +1,7 @@
 package com.brs.model;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -50,6 +50,9 @@ public class Book implements Serializable, Cloneable {
 
 	@Column(name = "on_hold_by")
 	private Integer onHoldBy;
+
+	@Column(name = "pickup_due_date")
+	private Date pickupDueDate;
 
 	public int getId() {
 		return id;
@@ -131,6 +134,14 @@ public class Book implements Serializable, Cloneable {
 		this.onHoldBy = onHoldBy;
 	}
 
+	public Date getPickupDueDate() {
+		return pickupDueDate;
+	}
+
+	public void setPickupDueDate(Date pickupDueDate) {
+		this.pickupDueDate = pickupDueDate;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -154,6 +165,8 @@ public class Book implements Serializable, Cloneable {
 		builder.append(isOnHold);
 		builder.append(", onHoldBy=");
 		builder.append(onHoldBy);
+		builder.append(", pickupDueDate=");
+		builder.append(pickupDueDate);
 		builder.append("]");
 		return builder.toString();
 	}

@@ -40,4 +40,9 @@ public class BookManagementServiceImpl implements BookManagementService {
 		return iBookRepository.findOne(id);
 	}
 
+	@Override
+	public List<Book> findBooksOnHoldForUser(Integer userId) {
+		return iBookRepository.findBooksOnHoldForUser(userId);
+	}
+
 }
