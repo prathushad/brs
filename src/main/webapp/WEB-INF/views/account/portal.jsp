@@ -1,6 +1,6 @@
 <div class="gutter10">
 	<div class="row-fluid" id="">
-		<h1 id="skip" style="text-align: center;">Welcome, ${username}</h1>
+		<h1 id="skip" style="text-align: center;">Welcome, ${displayname}</h1>
 	</div>
 	<div class="row-fluid" style="height: 400px;">
 		<%@ include file="sidebar.jsp"%>

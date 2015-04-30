@@ -145,4 +145,8 @@ public class User implements UserDetails, Serializable, Cloneable {
 		this.role = role;
 	}
 
+	public String getFullName() {
+		return this.getFirstName().concat(" ").concat(this.getLastName());
+	}
+
 }

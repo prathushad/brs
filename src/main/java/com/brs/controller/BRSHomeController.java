@@ -9,17 +9,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.brs.model.User;
+
 @Controller
 public class BRSHomeController {
 
 	@RequestMapping(value = "/portal", method = RequestMethod.GET)
-	public String getList(HttpServletRequest httpRequest, Model model){
+	public String getList(HttpServletRequest httpRequest, Model model) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		auth.getName();
-		model.addAttribute("username", auth.getName());
+		User user = (User) auth.getPrincipal();
+		model.addAttribute("displayname", user.getFullName());
 		return "portal";
 	}
-	
+
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(Model model) {
 		return "account/login";
