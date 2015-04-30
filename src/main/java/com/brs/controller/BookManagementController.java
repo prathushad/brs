@@ -83,4 +83,14 @@ public class BookManagementController {
 		bookManagementService.updateBook(book);
 		return "redirect:/showallholds";
 	}
+	
+	@RequestMapping(value = "/showallcheckouts", method = RequestMethod.GET)
+	public String showallcheckouts(Model model, HttpServletRequest httpRequest) {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		User user = (User) auth.getPrincipal();
+		List<Book> books = bookManagementService.findBooksCheckedOutByUser(user.getId());
+		model.addAttribute("results", books);
+		return "books/checkoutresults";
+	}
+	
 }

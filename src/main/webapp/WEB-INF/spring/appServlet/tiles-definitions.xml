@@ -32,6 +32,9 @@
 	<definition name="books/searchresults" extends="shell">
 		<put-attribute name="main" value="/WEB-INF/views/books/searchresults.jsp" />
 	</definition>
+	<definition name="books/checkoutresults" extends="shell">
+		<put-attribute name="main" value="/WEB-INF/views/books/checkoutresults.jsp" />
+	</definition>
 	<definition name="books/holdresults" extends="shell">
 		<put-attribute name="main" value="/WEB-INF/views/books/holdresults.jsp" />
 	</definition>

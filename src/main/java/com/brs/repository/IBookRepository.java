@@ -15,4 +15,6 @@ public interface IBookRepository extends JpaRepository<Book, Integer> {
 	@Query("select bks from Book as bks where bks.onHoldBy=:userId")
 	List<Book> findBooksOnHoldForUser(@Param("userId")Integer userId);
 
+	@Query("select bks from Book as bks where bks.checkedOutTo=:userId")
+	List<Book> findBooksCheckedOutUser(@Param("userId")Integer userId);
 }

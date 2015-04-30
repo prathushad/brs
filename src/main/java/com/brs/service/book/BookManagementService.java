@@ -11,4 +11,5 @@ public interface BookManagementService {
 	Book updateBook(Book book);
 	Book findBookById(Integer id);
 	List<Book> findBooksOnHoldForUser(Integer userId);
+	List<Book> findBooksCheckedOutByUser(Integer userId);
 }
