@@ -20,7 +20,7 @@
 		<intercept-url pattern="/login" access="permitAll" />
 		<intercept-url pattern="/logout" access="permitAll" />
 		<intercept-url pattern="/accessdenied" access="permitAll" />
-		<intercept-url pattern="/**" access="hasRole('USER')" />
+		<intercept-url pattern="/**" access="hasAnyRole('USER', 'ADMIN')" />
 		<form-login login-page="/login" default-target-url="/portal"
 			authentication-failure-url="/login?auth=fail" />
 		<logout logout-success-url="/home" />

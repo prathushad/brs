@@ -16,6 +16,9 @@
 	<definition name="portal" extends="shell">
 		<put-attribute name="main" value="/WEB-INF/views/account/portal.jsp" />
 	</definition>
+	<definition name="adminportal" extends="shell">
+		<put-attribute name="main" value="/WEB-INF/views/admin/adminportal.jsp" />
+	</definition>
 
 	<definition name="account/login" extends="shell">
 		<put-attribute name="main" value="/WEB-INF/views/account/login.jsp" />

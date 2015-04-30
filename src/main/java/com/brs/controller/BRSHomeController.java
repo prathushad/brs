@@ -19,8 +19,13 @@ public class BRSHomeController {
 	@Autowired
 	private BookManagementService bookManagementService;
 
+	private static final String USER_PORTAL = "portal";
+	private static final String ADMIN_PORTAL = "adminportal";
+	
+	
 	@RequestMapping(value = "/portal", method = RequestMethod.GET)
 	public String getList(HttpServletRequest httpRequest, Model model) {
+		String portalPage = USER_PORTAL;
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		User user = (User) auth.getPrincipal();
 		
@@ -30,8 +35,10 @@ public class BRSHomeController {
 		model.addAttribute("displayname", user.getFullName());
 		model.addAttribute("checkouts", numberOfBooksCheckedOut);
 		model.addAttribute("holds", numberOfBooksOnHold);
-		
-		return "portal";
+		if(user.getRole().equalsIgnoreCase("ADMIN")){
+			portalPage=ADMIN_PORTAL;
+		}
+		return portalPage;
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
