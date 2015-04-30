@@ -81,7 +81,8 @@ public class BookManagementController {
 		book.setIsAvailable("Y");
 		book.setPickupDueDate(null);
 		bookManagementService.updateBook(book);
-		return "redirect:/showallholds";
+		model.addAttribute("title",book.getTitle());
+		return "books/holdreleasesuccess";
 	}
 	
 	@RequestMapping(value = "/showallcheckouts", method = RequestMethod.GET)
