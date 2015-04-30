@@ -17,7 +17,6 @@ public class BRSHomeController {
 	@RequestMapping(value = "/portal", method = RequestMethod.GET)
 	public String getList(HttpServletRequest httpRequest, Model model) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		auth.getName();
 		User user = (User) auth.getPrincipal();
 		model.addAttribute("displayname", user.getFullName());
 		return "portal";

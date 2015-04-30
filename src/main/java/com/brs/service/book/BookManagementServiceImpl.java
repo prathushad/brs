@@ -17,10 +17,27 @@ public class BookManagementServiceImpl implements BookManagementService {
 
 	@Override
 	public List<Book> findBooksByAuthor(String author) {
-
 		List<Book> booksByAuthor = new ArrayList<Book>();
 		booksByAuthor = iBookRepository.findBooksByAuthor(author);
 		return booksByAuthor;
+	}
+
+	@Override
+	public List<Book> findAll() {
+		List<Book> allBooks = new ArrayList<Book>();
+		allBooks = iBookRepository.findAll();
+		return allBooks;
+	}
+
+	@Override
+	public Book updateBook(Book book) {
+		Book savedBook = iBookRepository.save(book);
+		return savedBook;
+	}
+
+	@Override
+	public Book findBookById(Integer id) {
+		return iBookRepository.findOne(id);
 	}
 
 }
