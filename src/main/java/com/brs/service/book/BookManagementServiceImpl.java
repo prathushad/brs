@@ -50,4 +50,9 @@ public class BookManagementServiceImpl implements BookManagementService {
 		return iBookRepository.findBooksCheckedOutUser(userId);
 	}
 
+	@Override
+	public List<Book> findBooksOnHoldForAllUsers() {
+		return iBookRepository.findBooksOnHoldForAllUsers();
+	}
+
 }

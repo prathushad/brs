@@ -52,6 +52,14 @@
 		<put-attribute name="main" value="/WEB-INF/views/books/holdreleasesuccess.jsp" />
 	</definition>
 
+	<definition name="admin/manageholds" extends="shell">
+		<put-attribute name="main" value="/WEB-INF/views/admin/manageholds.jsp" />
+	</definition>
+
+	<definition name="admin/holdresults" extends="shell">
+		<put-attribute name="main" value="/WEB-INF/views/admin/adminholds.jsp" />
+	</definition>
+
 	<definition name="error" extends="shell">
 		<put-attribute name="main" value="/WEB-INF/views/error/error.jsp" />
 	</definition>
