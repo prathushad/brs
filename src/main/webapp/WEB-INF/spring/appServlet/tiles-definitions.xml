@@ -60,6 +60,12 @@
 		<put-attribute name="main" value="/WEB-INF/views/admin/adminholds.jsp" />
 	</definition>
 
+	<definition name="admin/checkoutsuccess" extends="shell">
+		<put-attribute name="main" value="/WEB-INF/views/admin/checkoutsuccess.jsp" />
+	</definition>
+	<definition name="admin/holdreleasesuccess" extends="shell">
+		<put-attribute name="main" value="/WEB-INF/views/admin/holdreleasesuccess.jsp" />
+	</definition>
 	<definition name="error" extends="shell">
 		<put-attribute name="main" value="/WEB-INF/views/error/error.jsp" />
 	</definition>

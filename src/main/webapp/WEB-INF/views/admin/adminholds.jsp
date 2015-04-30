@@ -15,7 +15,8 @@
 							<th>Title</th>
 							<th>Author</th>
 							<th>Holded Until</th>
-							<th>Release Hold</th>
+							<th>Release</th>
+							<th>Checkout</th>
 						</tr>
 					</thead>
 					<c:forEach var="book" items="${results}">
@@ -24,17 +25,23 @@
 									value="${book.title}"></c:out></td>
 							<td style="text-wrap: normal; width: 25%;"><c:out
 									value="${book.author}"></c:out></td>
-							<td style="text-wrap: normal; width: 25%;"><fmt:formatDate
+							<td style="text-wrap: normal; width: 20%;"><fmt:formatDate
 									type="date" value="${book.pickupDueDate}" /></td>
-							<td style="text-wrap: normal; width: 25%;"><a class="btn btn-small btn-primary"
-								href='<c:url value='/releasehold'/>?book=${book.id}'>Release</a></td>
+							<td style="text-wrap: normal; width: 15%;"><a
+								class="btn btn-small btn-primary"
+								href='<c:url value='/releaseholdbyadmin'/>?book=${book.id}'>Release</a>
+							</td>
+							<td style="text-wrap: normal; width: 15%;"><a
+								class="btn btn-small btn-primary"
+								href='<c:url value='/checkout'/>?book=${book.id}'>Checkout</a></td>
 						</tr>
 					</c:forEach>
 				</table>
 			</c:if>
 			<c:if test="${fn:length(results) == 0}">
 				<div style="text-align: center; padding-top: 40px;">
-					<div class="alert alert-danger">There are no books on hold with the given criteria.</div>
+					<div class="alert alert-danger">There are no books on hold
+						with the given criteria.</div>
 				</div>
 			</c:if>
 			<div style="padding-top: 2cm; text-align: center;">
