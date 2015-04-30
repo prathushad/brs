@@ -60,4 +60,8 @@ public class BRSHomeController {
 		return "error";
 	}
 
+	@RequestMapping(value = "/contactus", method = RequestMethod.GET)
+	public String contactus(Model model) {
+		return "account/contactus";
+	}
 }

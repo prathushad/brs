@@ -25,6 +25,10 @@
 		<put-attribute name="main" value="/WEB-INF/views/account/signup.jsp" />
 	</definition>
 
+	<definition name="account/contactus" extends="shell">
+		<put-attribute name="main" value="/WEB-INF/views/account/contactus.jsp" />
+	</definition>
+
 	<definition name="books/search" extends="shell">
 		<put-attribute name="main" value="/WEB-INF/views/books/search.jsp" />
 	</definition>
