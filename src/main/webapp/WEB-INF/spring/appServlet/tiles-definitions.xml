@@ -29,6 +29,10 @@
 		<put-attribute name="main" value="/WEB-INF/views/books/search.jsp" />
 	</definition>
 
+	<definition name="books/searchresults" extends="shell">
+		<put-attribute name="main" value="/WEB-INF/views/books/searchresults.jsp" />
+	</definition>
+
 	<definition name="error" extends="shell">
 		<put-attribute name="main" value="/WEB-INF/views/error/error.jsp" />
 	</definition>

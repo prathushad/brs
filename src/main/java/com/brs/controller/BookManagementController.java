@@ -2,12 +2,13 @@ package com.brs.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.brs.model.Book;
 import com.brs.service.book.BookManagementService;
@@ -25,4 +26,10 @@ public class BookManagementController {
 		return "books/search";
 	}
 
+	@RequestMapping(value = "/dosearch", method = RequestMethod.POST)
+	public String dosearch(Model model, HttpServletRequest httpRequest) {
+		List<Book> books = bookManagementService.findBooksByAuthor(httpRequest.getParameter("title"));
+		model.addAttribute("results", books);
+		return "books/searchresults";
+	}
 }
