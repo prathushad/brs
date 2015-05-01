@@ -1,5 +1,6 @@
 package com.brs.repository;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -23,4 +24,7 @@ public interface IBookRepository extends JpaRepository<Book, Integer> {
 	
 	@Query("select bks from Book as bks where bks.checkedOutTo is not null")
 	List<Book> findBooksCheckedOutByAllUsers();
+
+	@Query("select bks from Book as bks where bks.pickupDueDate <=:selectedDate")
+	List<Book> findBooksOnHoldUntilDate(@Param("selectedDate")Date selectedDate);
 }

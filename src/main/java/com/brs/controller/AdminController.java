@@ -53,6 +53,11 @@ public class AdminController {
 				&& httpRequest.getParameter("allusers").trim().length() > 0
 				&& "all".equalsIgnoreCase(httpRequest.getParameter("allusers"))) {
 			books = bookManagementService.findBooksOnHoldForAllUsers();
+		}else if(null != httpRequest.getParameter("selecteddate")
+				&& httpRequest.getParameter("selecteddate").trim().length() > 0){
+			@SuppressWarnings("deprecation")
+			Date selectedDate = new Date(httpRequest.getParameter("selecteddate").trim());
+			books = bookManagementService.findBooksOnHoldUntilDate(selectedDate);			
 		}
 		model.addAttribute("results", books);
 		return "admin/holdresults";

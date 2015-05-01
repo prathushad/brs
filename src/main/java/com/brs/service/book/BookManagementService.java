@@ -1,5 +1,6 @@
 package com.brs.service.book;
 
+import java.util.Date;
 import java.util.List;
 
 import com.brs.model.Book;
@@ -14,4 +15,5 @@ public interface BookManagementService {
 	List<Book> findBooksCheckedOutByUser(Integer userId);
 	List<Book> findBooksOnHoldForAllUsers();
 	List<Book> findBooksCheckedOutByAllUsers();
+	List<Book> findBooksOnHoldUntilDate(Date selectedDate);
 }

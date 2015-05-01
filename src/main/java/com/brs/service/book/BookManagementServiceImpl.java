@@ -1,6 +1,7 @@
 package com.brs.service.book;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,6 +59,11 @@ public class BookManagementServiceImpl implements BookManagementService {
 	@Override
 	public List<Book> findBooksCheckedOutByAllUsers() {
 		return iBookRepository.findBooksCheckedOutByAllUsers();
+	}
+
+	@Override
+	public List<Book> findBooksOnHoldUntilDate(Date selectedDate) {
+		return iBookRepository.findBooksOnHoldUntilDate(selectedDate);
 	}
 
 }

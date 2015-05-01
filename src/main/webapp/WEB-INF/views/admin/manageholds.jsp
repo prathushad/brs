@@ -12,6 +12,13 @@
 						<td>Enter the Username:</td>
 						<td><input type='text' name='username' style="width: 400px" /></td>
 					</tr>
+					<tr style="text-align:left;">
+						<td>OR</td>
+					</tr>
+					<tr>
+						<td>Enter the Date:</td>
+						<td><i class="icon-calendar"></i>&nbsp;<input type="text" name="selecteddate" id="datepicker"></td>
+					</tr>
 					<tr>
 						<td colspan='2' style="text-align: center; padding-left: 40px;"><input
 							name="manage" value="Manage" class="btn btn-primary"
@@ -20,7 +27,7 @@
 				</table>
 			</form>
 			<div style="text-align: center;">OR</div>
-			<form name="search" action="<c:url value='retrieveholds'/>"
+			<form name="retrieve" action="<c:url value='retrieveholds'/>"
 				method="POST" style="padding-top: 15px; padding-left: 200px;">
 				<table>
 					<tr style="padding-top: 20px">
@@ -35,3 +42,15 @@
 	</div>
 
 </div>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js">
+</script>
+<script type="text/javascript">
+$(function(){
+	$( "#datepicker" ).datepicker();
+	//Pass the user selected date format
+	$( "#format" ).change(function() {
+	$( "#datepicker" ).datepicker( "option", "dateFormat", $(this).val() );
+	});
+	});
+</script>
