@@ -163,15 +163,16 @@ public class AdminController {
 		String status = "";
 		User user = userManagementService.findUserByUsername(httpRequest
 				.getParameter("username"));
-		if (user != null) {
-			user.setFirstName(firstName);
-			user.setLastName(lastName);
-			user.setEmail(email);
+		if (user != null && firstName != null && firstName.trim().length() > 0
+				&& lastName != null && lastName.trim().length() > 0
+				&& email != null && email.trim().length() > 0) {
+			user.setFirstName(firstName.trim());
+			user.setLastName(lastName.trim());
+			user.setEmail(email.trim());
 			user = userManagementService.updateUser(user);
-			status="success";
-		}
-		if(user==null){
-			status="failure";
+			status = "success";
+		} else {
+			status = "failure";
 		}
 		model.addAttribute("user", user);
 		model.addAttribute("status", status);
