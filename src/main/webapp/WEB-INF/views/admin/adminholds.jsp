@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <div class="gutter10">
 	<div class="row-fluid" id="">
-		<h1 id="skip" style="text-align: center;">Manage holds</h1>
+		<h1 id="skip" style="text-align: center;">Manage Holds</h1>
 	</div>
 	<div class="row-fluid" style="height: 400px;">
 		<%@ include file="../layouts/sidebar.jsp"%>
