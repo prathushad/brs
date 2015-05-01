@@ -10,8 +10,10 @@
 			<div class="alert alert-info" style="text-align:center;color:green;">
 				<span>You have successfully returned the book -
 					${title}!</span>
-				<c:if test="${fine!=null}">${fine}</c:if>	
 			</div>
+			<c:if test="${fine!=null}">
+			<div class="alert alert-danger" style="text-align:center;color:green;">Collect ${fine} fine from the user.</div>
+			</c:if>	
 			<div style="padding-top: 1cm; text-align: center;">
 				<a class="btn btn-primary" href="<c:url value='managecheckouts'/>">Click
 					here to go back to manage checkouts page</a>

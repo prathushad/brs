@@ -114,7 +114,7 @@ public class AdminController {
 		Book book = bookManagementService.findBookById(bookId);
 		Date returnedDate = new Date();
 		if(returnedDate.after(book.getReturnDate())){
-			Days daysForFine = Days.daysBetween(new DateTime(returnedDate.getTime()).toLocalDate(), new DateTime(book.getReturnDate()).toLocalDate());
+			Days daysForFine = Days.daysBetween(new DateTime(book.getReturnDate()).toLocalDate(),new DateTime(returnedDate.getTime()).toLocalDate());
 			int amount = daysForFine.getDays();
 			fine="$"+amount;
 		}
