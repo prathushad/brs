@@ -13,4 +13,5 @@ public interface BookManagementService {
 	List<Book> findBooksOnHoldForUser(Integer userId);
 	List<Book> findBooksCheckedOutByUser(Integer userId);
 	List<Book> findBooksOnHoldForAllUsers();
+	List<Book> findBooksCheckedOutByAllUsers();
 }

@@ -20,4 +20,7 @@ public interface IBookRepository extends JpaRepository<Book, Integer> {
 
 	@Query("select bks from Book as bks where bks.onHoldBy is not null")
 	List<Book> findBooksOnHoldForAllUsers();
+	
+	@Query("select bks from Book as bks where bks.checkedOutTo is not null")
+	List<Book> findBooksCheckedOutByAllUsers();
 }

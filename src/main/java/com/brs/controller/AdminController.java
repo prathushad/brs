@@ -2,6 +2,7 @@ package com.brs.controller;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -32,6 +33,11 @@ public class AdminController {
 		return "admin/manageholds";
 	}
 
+	@RequestMapping(value = "/managecheckouts", method = RequestMethod.GET)
+	public String managecheckouts(Model model, HttpServletRequest httpRequest) {
+		return "admin/managecheckouts";
+	}
+
 	@RequestMapping(value = "/retrieveholds", method = RequestMethod.POST)
 	public String updateholds(Model model, HttpServletRequest httpRequest) {
 		User user = null;
@@ -48,6 +54,22 @@ public class AdminController {
 		return "admin/holdresults";
 	}
 
+
+	@RequestMapping(value = "/retrievecheckouts", method = RequestMethod.POST)
+	public String retrievecheckouts(Model model, HttpServletRequest httpRequest) {
+		User user = null;
+		List<Book> books = new ArrayList<Book>();
+		if(null!=httpRequest.getParameter("username")&&httpRequest.getParameter("username").trim().length()>0){
+			user = userManagementService.findUserByUsername(httpRequest.getParameter("username").trim());
+			books = bookManagementService.findBooksCheckedOutByUser(user.getId());
+		} else if (null != httpRequest.getParameter("allusers")
+				&& httpRequest.getParameter("allusers").trim().length() > 0
+				&& "all".equalsIgnoreCase(httpRequest.getParameter("allusers"))) {
+			books = bookManagementService.findBooksCheckedOutByAllUsers();
+		}
+		model.addAttribute("results", books);
+		return "admin/checkoutresults";
+	}
 
 	@RequestMapping(value = "/checkout", method = RequestMethod.GET)
 	public String placehold(Model model, HttpServletRequest httpRequest, @RequestParam(value="book") Integer bookId) {
@@ -83,4 +105,31 @@ public class AdminController {
 		model.addAttribute("title",book.getTitle());
 		return "admin/holdreleasesuccess";
 	}	
+
+	@RequestMapping(value = "/returnbook", method = RequestMethod.GET)
+	public String returnbook(Model model, HttpServletRequest httpRequest, @RequestParam(value="book") Integer bookId) {
+		String fine = null;
+		Book book = bookManagementService.findBookById(bookId);
+		Date returnDate = new Date();
+		if(returnDate.getTime()>book.getReturnDate().getTime()){
+			//FIXME
+			fine="$10";
+		}
+		
+		book.setIsCheckedOut("N");
+		book.setIsAvailable("Y");
+		book.setCheckedOutTo(null);
+		book.setReturnDate(null);
+
+		book.setIsOnHold("N");
+		book.setOnHoldBy(null);
+		book.setPickupDueDate(null);
+		
+		bookManagementService.updateBook(book);
+		model.addAttribute("title", book.getTitle());
+		model.addAttribute("fine", fine);
+		
+		return "admin/returnsuccess";
+	}
+
 }

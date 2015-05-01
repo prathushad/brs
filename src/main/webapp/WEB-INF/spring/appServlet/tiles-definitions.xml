@@ -56,8 +56,16 @@
 		<put-attribute name="main" value="/WEB-INF/views/admin/manageholds.jsp" />
 	</definition>
 
+	<definition name="admin/managecheckouts" extends="shell">
+		<put-attribute name="main" value="/WEB-INF/views/admin/managecheckouts.jsp" />
+	</definition>
+
 	<definition name="admin/holdresults" extends="shell">
 		<put-attribute name="main" value="/WEB-INF/views/admin/adminholds.jsp" />
+	</definition>
+
+	<definition name="admin/checkoutresults" extends="shell">
+		<put-attribute name="main" value="/WEB-INF/views/admin/admincheckouts.jsp" />
 	</definition>
 
 	<definition name="admin/checkoutsuccess" extends="shell">
@@ -66,6 +74,10 @@
 	<definition name="admin/holdreleasesuccess" extends="shell">
 		<put-attribute name="main" value="/WEB-INF/views/admin/holdreleasesuccess.jsp" />
 	</definition>
+	<definition name="admin/returnsuccess" extends="shell">
+		<put-attribute name="main" value="/WEB-INF/views/admin/returnsuccess.jsp" />
+	</definition>
+
 	<definition name="error" extends="shell">
 		<put-attribute name="main" value="/WEB-INF/views/error/error.jsp" />
 	</definition>
