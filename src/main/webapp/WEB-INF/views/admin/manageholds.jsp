@@ -12,8 +12,8 @@
 						<td>Enter the Username:</td>
 						<td><input type='text' name='username' style="width: 400px" /></td>
 					</tr>
-					<tr style="text-align:left;">
-						<td>OR</td>
+					<tr>
+						<td  style="padding-left:30px;" >OR</td>
 					</tr>
 					<tr>
 						<td>Enter the Date:</td>
