@@ -34,7 +34,7 @@
 <!-- 		<property name="username" value="" /> -->
 <!-- 		<property name="password" value="" /> -->
 <!-- 	</bean> -->
-	<jee:jndi-lookup jndi-name="jdbc/brsDS" id="dataSource" />
+	<jee:jndi-lookup jndi-name="jdbc/MySQLDS" id="dataSource" />
 
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory"/>
