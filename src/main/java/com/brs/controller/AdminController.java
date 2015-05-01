@@ -139,4 +139,15 @@ public class AdminController {
 		return "admin/returnsuccess";
 	}
 
+	@RequestMapping(value = "/manageusers", method = RequestMethod.GET)
+	public String manageusers(Model model, HttpServletRequest httpRequest) {
+		return "admin/manageusers";
+	}
+
+	@RequestMapping(value = "/finduser", method = RequestMethod.POST)
+	public String finduser(Model model, HttpServletRequest httpRequest) {
+		User user = userManagementService.findUserByUsername(httpRequest.getParameter("username"));
+		model.addAttribute("user", user);
+		return "admin/userinfo";
+	}
 }

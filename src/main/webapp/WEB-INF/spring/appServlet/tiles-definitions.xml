@@ -77,7 +77,13 @@
 	<definition name="admin/returnsuccess" extends="shell">
 		<put-attribute name="main" value="/WEB-INF/views/admin/returnsuccess.jsp" />
 	</definition>
+	<definition name="admin/manageusers" extends="shell">
+		<put-attribute name="main" value="/WEB-INF/views/admin/manageusers.jsp" />
+	</definition>
 
+	<definition name="admin/userinfo" extends="shell">
+		<put-attribute name="main" value="/WEB-INF/views/admin/userinfo.jsp" />
+	</definition>
 	<definition name="error" extends="shell">
 		<put-attribute name="main" value="/WEB-INF/views/error/error.jsp" />
 	</definition>
