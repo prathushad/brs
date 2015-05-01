@@ -7,6 +7,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.joda.time.DateTime;
+import org.joda.time.Days;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -110,10 +112,11 @@ public class AdminController {
 	public String returnbook(Model model, HttpServletRequest httpRequest, @RequestParam(value="book") Integer bookId) {
 		String fine = null;
 		Book book = bookManagementService.findBookById(bookId);
-		Date returnDate = new Date();
-		if(returnDate.getTime()>book.getReturnDate().getTime()){
-			//FIXME
-			fine="$10";
+		Date returnedDate = new Date();
+		if(returnedDate.after(book.getReturnDate())){
+			Days daysForFine = Days.daysBetween(new DateTime(returnedDate.getTime()).toLocalDate(), new DateTime(book.getReturnDate()).toLocalDate());
+			int amount = daysForFine.getDays();
+			fine="$"+amount;
 		}
 		
 		book.setIsCheckedOut("N");
