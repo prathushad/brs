@@ -46,7 +46,9 @@ public class AdminController {
 		List<Book> books = new ArrayList<Book>();
 		if(null!=httpRequest.getParameter("username")&&httpRequest.getParameter("username").trim().length()>0){
 			user = userManagementService.findUserByUsername(httpRequest.getParameter("username").trim());
-			books = bookManagementService.findBooksOnHoldForUser(user.getId());
+			if(user!=null){
+				books = bookManagementService.findBooksOnHoldForUser(user.getId());
+			}
 		} else if (null != httpRequest.getParameter("allusers")
 				&& httpRequest.getParameter("allusers").trim().length() > 0
 				&& "all".equalsIgnoreCase(httpRequest.getParameter("allusers"))) {
@@ -63,7 +65,9 @@ public class AdminController {
 		List<Book> books = new ArrayList<Book>();
 		if(null!=httpRequest.getParameter("username")&&httpRequest.getParameter("username").trim().length()>0){
 			user = userManagementService.findUserByUsername(httpRequest.getParameter("username").trim());
-			books = bookManagementService.findBooksCheckedOutByUser(user.getId());
+			if(user!=null){
+				books = bookManagementService.findBooksCheckedOutByUser(user.getId());
+			}
 		} else if (null != httpRequest.getParameter("allusers")
 				&& httpRequest.getParameter("allusers").trim().length() > 0
 				&& "all".equalsIgnoreCase(httpRequest.getParameter("allusers"))) {
