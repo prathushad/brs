@@ -105,6 +105,7 @@ public class AdminController {
 		
 		bookManagementService.updateBook(book);
 		model.addAttribute("title", book.getTitle());
+		model.addAttribute("returndate", today.getTime());
 		return "admin/checkoutsuccess";
 	}
 	

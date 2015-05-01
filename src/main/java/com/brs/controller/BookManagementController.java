@@ -60,6 +60,7 @@ public class BookManagementController {
 		book.setPickupDueDate(today.getTime());
 		bookManagementService.updateBook(book);
 		model.addAttribute("title", book.getTitle());
+		model.addAttribute("pickupdate", today.getTime());
 		return "books/holdsuccess";
 	}
 
