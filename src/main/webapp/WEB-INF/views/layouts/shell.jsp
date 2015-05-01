@@ -33,6 +33,8 @@
 	src="<c:url value="/resources/js/jquery.validate.min.js" />"></script>
 <script type="text/javascript"
 	src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+<script type="text/javascript"
+	src="<c:url value="/resources/js/parsley.min.js" />"></script>
 
 </head>
 <body>
