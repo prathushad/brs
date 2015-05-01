@@ -24,6 +24,6 @@
 		</table>
 	</form>
 	<c:if test="${'fail' eq param.auth}">
-		<div style="color: red"> Username and/or password is incorrect. Please try again.</div>
+		<div style="padding-left:260px;color: red"> Username and/or password is incorrect. Please try again.</div>
 	</c:if>
 </div>
