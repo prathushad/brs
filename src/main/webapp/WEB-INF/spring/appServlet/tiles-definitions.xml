@@ -80,6 +80,9 @@
 	<definition name="admin/manageusers" extends="shell">
 		<put-attribute name="main" value="/WEB-INF/views/admin/manageusers.jsp" />
 	</definition>
+	<definition name="admin/userupdatesuccess" extends="shell">
+		<put-attribute name="main" value="/WEB-INF/views/admin/userupdatesuccess.jsp" />
+	</definition>
 
 	<definition name="admin/userinfo" extends="shell">
 		<put-attribute name="main" value="/WEB-INF/views/admin/userinfo.jsp" />

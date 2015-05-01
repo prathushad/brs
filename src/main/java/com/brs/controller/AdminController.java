@@ -146,8 +146,36 @@ public class AdminController {
 
 	@RequestMapping(value = "/finduser", method = RequestMethod.POST)
 	public String finduser(Model model, HttpServletRequest httpRequest) {
-		User user = userManagementService.findUserByUsername(httpRequest.getParameter("username"));
+		User user =null;
+		String username = httpRequest.getParameter("username");
+		if(username!=null && username.trim().length()>0){
+			user = userManagementService.findUserByUsername(httpRequest.getParameter("username"));
+		}
 		model.addAttribute("user", user);
 		return "admin/userinfo";
 	}
+
+	@RequestMapping(value = "/updateuser", method = RequestMethod.POST)
+	public String updateuser(Model model, HttpServletRequest httpRequest) {
+		String firstName = httpRequest.getParameter("firstname");
+		String lastName = httpRequest.getParameter("lastname");
+		String email = httpRequest.getParameter("email");
+		String status = "";
+		User user = userManagementService.findUserByUsername(httpRequest
+				.getParameter("username"));
+		if (user != null) {
+			user.setFirstName(firstName);
+			user.setLastName(lastName);
+			user.setEmail(email);
+			user = userManagementService.updateUser(user);
+			status="success";
+		}
+		if(user==null){
+			status="failure";
+		}
+		model.addAttribute("user", user);
+		model.addAttribute("status", status);
+		return "admin/userupdatesuccess";
+	}
+
 }

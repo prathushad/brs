@@ -17,4 +17,9 @@ public class UserManagementServiceImpl implements UserManagementService {
 		return iUserRepository.findByUserName(userName);
 	}
 
+	@Override
+	public User updateUser(User user) {
+		return iUserRepository.save(user);
+	}
+
 }
