@@ -36,7 +36,7 @@
 			</c:if>
 			<c:if test="${fn:length(results) == 0}">
 				<div style="text-align: center; padding-top: 40px;">
-					<div class="alert alert-danger">There are no books on hold
+					<div class="alert alert-danger">There are no books checked out
 						with the given criteria.</div>
 				</div>
 			</c:if>
