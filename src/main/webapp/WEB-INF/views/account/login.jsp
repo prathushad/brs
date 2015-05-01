@@ -6,15 +6,15 @@
 <body>
 	<h1 id="banner">Login</h1>
 	<form name="f" action="<c:url value='j_spring_security_check'/>"
-		method="POST">
+		method="POST"  data-parsley-validate>
 		<table>
 			<tr>
 				<td>Username:</td>
-				<td><input type='text' name='j_username' /></td>
+				<td><input type='text' name='j_username'  required data-parsley-required-message="Please enter your Username"/></td>
 			</tr>
 			<tr>
 				<td>Password:</td>
-				<td><input type='password' name='j_password'></td>
+				<td><input type='password' name='j_password'  required data-parsley-required-message="Please enter your Password"/></td>
 			</tr>
 			<tr>
 				<td colspan="2">&nbsp;</td>
