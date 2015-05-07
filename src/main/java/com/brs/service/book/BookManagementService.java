@@ -8,6 +8,7 @@ import com.brs.model.Book;
 public interface BookManagementService {
 
 	List<Book> findBooksByAuthor(String author);
+	List<Book> findBooksByTitle(String title);
 	List<Book> findAll();
 	Book updateBook(Book book);
 	Book findBookById(Integer id);

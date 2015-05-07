@@ -66,4 +66,11 @@ public class BookManagementServiceImpl implements BookManagementService {
 		return iBookRepository.findBooksOnHoldUntilDate(selectedDate);
 	}
 
+	@Override
+	public List<Book> findBooksByTitle(String title) {
+		List<Book> booksByTitle = new ArrayList<Book>();
+		booksByTitle = iBookRepository.findBooksByTitle(title);
+		return booksByTitle;
+	}
+
 }

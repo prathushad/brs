@@ -13,6 +13,9 @@ public interface IBookRepository extends JpaRepository<Book, Integer> {
 
 	List<Book> findBooksByAuthor(String author);
 	
+	@Query("select bks from Book as bks where bks.title like :title")
+	List<Book> findBooksByTitle(@Param("title") String title);
+
 	@Query("select bks from Book as bks where bks.onHoldBy=:userId")
 	List<Book> findBooksOnHoldForUser(@Param("userId")Integer userId);
 

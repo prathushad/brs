@@ -26,14 +26,17 @@ public class BookManagementController {
 	
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public String search(Model model) {
-		List<Book> books = bookManagementService.findBooksByAuthor("Second");
-		model.addAttribute("result", books.toString());
 		return "books/search";
 	}
 
 	@RequestMapping(value = "/dosearch", method = RequestMethod.POST)
 	public String dosearch(Model model, HttpServletRequest httpRequest) {
-		List<Book> books = bookManagementService.findBooksByAuthor(httpRequest.getParameter("title"));
+		String title = "";
+		if(httpRequest.getParameter("title")!=null){
+			title = httpRequest.getParameter("title");
+			title = "%"+title+"%";
+		}
+		List<Book> books = bookManagementService.findBooksByTitle(title);
 		model.addAttribute("results", books);
 		return "books/searchresults";
 	}
