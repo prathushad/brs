@@ -1,5 +1,8 @@
 package com.brs.controller;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -15,6 +18,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.brs.model.Book;
 import com.brs.model.User;
@@ -189,4 +193,25 @@ public class AdminController {
 		return "admin/userupdatesuccess";
 	}
 
+	@RequestMapping(value = "/changeholddate", method = RequestMethod.POST)
+	@ResponseBody
+	public String changeholddate(Model model, HttpServletRequest httpRequest) {
+		try {
+		String book = httpRequest.getParameter("book");
+		String dateString = httpRequest.getParameter("date");
+		DateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+		Date date;
+			date = format.parse(dateString);
+		Book bookToUpdate = bookManagementService.findBookById(Integer.valueOf(book));
+		bookToUpdate.setPickupDueDate(date);
+		bookManagementService.updateBook(bookToUpdate);
+		} catch (ParseException e) {
+			e.printStackTrace();
+			return "failure";
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return "failure";
+		}
+		return "success";
+	}
 }
