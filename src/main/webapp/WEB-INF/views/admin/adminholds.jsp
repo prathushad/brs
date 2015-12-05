@@ -117,6 +117,7 @@ $("#saveHoldDate").click( function(e) {
 	    data : requestData,
 	    success: function(data, textStatus, jqXHR)
 	    {
+	        $('#saveHoldDate').css("visibility", "hidden");
 	        $('#changeHoldDateInputs').css("visibility", "hidden");
 	        $('#changeHoldDateOutputs').css("visibility", "visible");
 	        $('#changeHoldDateSuccess').css("visibility", "visible");
