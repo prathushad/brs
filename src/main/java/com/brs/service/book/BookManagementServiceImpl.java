@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import com.brs.model.Book;
 import com.brs.repository.IBookRepository;
 
-@Service
+@Service("bookManagementServiceImpl")
 public class BookManagementServiceImpl implements BookManagementService {
 
 	@Autowired
@@ -71,6 +71,13 @@ public class BookManagementServiceImpl implements BookManagementService {
 		List<Book> booksByTitle = new ArrayList<Book>();
 		booksByTitle = iBookRepository.findBooksByTitle(title);
 		return booksByTitle;
+	}
+
+	@Override
+	public List<Book> updateBooks(List<Book> books) {
+		List<Book> booksSaved = new ArrayList<Book>();
+		booksSaved = iBookRepository.save(books);
+		return booksSaved;
 	}
 
 }

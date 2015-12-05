@@ -17,4 +17,5 @@ public interface BookManagementService {
 	List<Book> findBooksOnHoldForAllUsers();
 	List<Book> findBooksCheckedOutByAllUsers();
 	List<Book> findBooksOnHoldUntilDate(Date selectedDate);
+	List<Book> updateBooks(List<Book> books);
 }
