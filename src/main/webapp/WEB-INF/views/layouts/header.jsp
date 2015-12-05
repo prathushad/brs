@@ -8,8 +8,8 @@
 	<div class="navbar-inner">
 		<div class="container">
 			<div style="float:left;padding-top:8px;">
-				<a href="home" style="padding-right: 450px; color: white">BOOK
-					RESERVATION SYSTEM</a>
+				<a href="home" style="padding-right: 450px; color: white">LIBRARY
+					MANAGEMENT SYSTEM</a>
 			</div>
 			<div  style="float:right">
 				<ul class="nav">

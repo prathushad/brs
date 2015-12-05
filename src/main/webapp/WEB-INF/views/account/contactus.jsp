@@ -9,8 +9,8 @@
 			<div style="text-align: center;padding-top:40px;"></div> 
 			<br />
 			<div class="alert alert-block" style="text-align: center;">Contact Us</div>
-			<div class="alert alert-danger" style="text-align: center;">Email: support@brs.com</div>
-			<div class="alert alert-info" style="text-align: center;">Phone: 1-800-BRS-DIAL</div>
+			<div class="alert alert-danger" style="text-align: center;">Email: support@onlinelib.com</div>
+			<div class="alert alert-info" style="text-align: center;">Phone: 1-800-LIB-DIAL</div>
 			
 		</div>
 	</div>

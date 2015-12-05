@@ -7512,7 +7512,7 @@ h1 {
   border-bottom: 1px solid #e6eaeb;
   padding-bottom: 15px;
   margin-bottom: 0;
-  color: #313B74;
+  color: #743131;
   font-weight: 300;
   line-height: 1.25em;
 }
@@ -7542,7 +7542,7 @@ h3 {
   font-family: "proxima-nova", sans-serif;
   line-height: 1.45em;
   font-weight: 600;
-  color: #313B74;
+  color: #743131;
 }
 
 h5 {
@@ -7669,7 +7669,7 @@ h5.finished-step-checkmark:before,
 h6.finished-step-checkmark:before {
   content: "\f111";
   font-size: 36px;
-  color: #313B74;
+  color: #743131;
   position: absolute;
   right: 3px;
   top: 1px;
@@ -7803,7 +7803,7 @@ a [class*=" icon-"] {
 }
 
 .mixins-masthead-bg-color {
-  background: #313B74;
+  background: #743131;
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)";
 }
 
@@ -7827,9 +7827,9 @@ a [class*=" icon-"] {
 }
 
 #masthead .navbar-inner {
-  background: #313B74;
+  background: #743131;
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)";
-  border-bottom: 5px solid #313B74;
+  border-bottom: 5px solid #743131;
 }
 
 #masthead .nav {
@@ -8032,7 +8032,7 @@ a [class*=" icon-"] {
 }
 
 .mixins-primary-btn-bg {
-  background: #313B74;
+  background: #743131;
 }
 
 .mixins-primary-btn-bg-hover {
@@ -8076,7 +8076,7 @@ a [class*=" icon-"] {
 
 .btn-primary {
   color: #fff;
-  background: #313B74;
+  background: #743131;
   border: 1px solid #278ddb;
   text-shadow: none;
 }
@@ -8111,7 +8111,7 @@ a [class*=" icon-"] {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  background: #313B74;
+  background: #743131;
 }
 
 .mixins-sidebar-font-color {
@@ -8310,7 +8310,7 @@ input[type="radio"] {
 }
 
 #gallery #menu ul li a {
-  color: #313B74;
+  color: #743131;
   font-weight: 600;
 }
 
@@ -8471,7 +8471,7 @@ thead tr.graydrkbg {
 }
 
 .mixins-footer-bg-color {
-  background: #313B74;
+  background: #743131;
 }
 
 .mixins-footer-text-color {
@@ -8479,7 +8479,7 @@ thead tr.graydrkbg {
 }
 
 #footer {
-  background: #313B74;
+  background: #743131;
   color: #ffffff;
   width: 100%!important;
   font-size: 13px;
@@ -8559,7 +8559,7 @@ thead tr.graydrkbg {
 .datepicker td.active:hover.disabled,
 .datepicker td.active[disabled],
 .datepicker td.active:hover[disabled] {
-  background-color: #313B74!important;
+  background-color: #743131!important;
   border-radius: 0!important;
 }
 
@@ -8679,7 +8679,7 @@ ul.nav-list > li > a {
 }
 
 .well-step .blurb h4 {
-  color: #313B74;
+  color: #743131;
   background-color: transparent !important;
   font-family: inherit;
   font-size: 16px;

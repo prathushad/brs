@@ -46,11 +46,11 @@
 			<c:if test="${fn:length(results) == 0}">
 				<div style="text-align:center;padding-top:40px;"><div class="alert alert-danger" >No results have been found for the search criteria.</div></div>
 			</c:if>
+		</div>
 			<div style="padding-top: 2cm; text-align: center;">
 				<a class="btn btn-primary" href="<c:url value='search'/>">Click
 					here to go back to search page</a>
 			</div>
-		</div>
 	</div>
 
 </div>
